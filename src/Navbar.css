@@ -1,0 +1,83 @@
+/* Navbar */
+.pink-navbar {
+  background-color:  #c7307681;
+}
+
+/* Fix navbar height */
+.navbar {
+  height: 70px;              /* ✅ fixed height */
+  padding: 0 1rem;
+}
+
+
+/* Logo */
+.navbar-logo {
+  height: 55px;              /* ✅ smaller than navbar */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Links */
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+/* Mobile menu */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #c73076af;
+    padding-bottom: 1rem;
+  }
+}
+
+/* Floating Instagram */
+.floating-instagram {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+.floating-instagram-icon {
+  font-size: 55px;
+  color: #fff;
+  background: linear-gradient(
+    45deg,
+    #f58529,
+    #dd2a7b,
+    #8134af,
+    #515bd4
+  );
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease;
+}
+
+.floating-instagram-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .navbar-logo {
+    height: 45px;
+  }
+}
+
+
+.navbar-brand {
+  display: flex;
+  align-items: center;       /* ✅ vertical center */
+  padding: 0;
+}
+
+.floating-instagram-icon {
+  font-size: 30px; /* increase or decrease */
+}
