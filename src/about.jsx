@@ -5,7 +5,7 @@ function About() {
   return (
     <section className="about fade-in">
       <div className="about-container">
-        <h2 className="slide-up" id="about"> About JBN Cakes</h2>
+        <h2 className="slide-up" id="about"  style={{color:" rgba(199, 48, 118, 0.95)"}}> About JBN Cakes</h2>
 
         <p className="slide-up delay-1">
           JBN Cakes was born from a passion for baking and a love for creating

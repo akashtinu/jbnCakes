@@ -8,26 +8,23 @@ function Home() {
       {/* HERO */}
       <section className="hero fade-in">
         <div className="hero-text slide-left" >
-          <h1>JBN Cakes</h1>
-          <p>
-            Any celebration—whether a cozy gathering or an extravagant
-            party—is incomplete without cake. At JBN Cakes, we create
-            handcrafted specialty cakes made with premium ingredients,
-            artistic designs, and unforgettable flavors.
-          </p>
+          <h1 style={{color:" rgba(199, 48, 118, 0.95)"}}>JBN Cakes</h1>
+          
+          <h2 >
+            Designer cakes made fresh premium cakes in kanyakumari
+          </h2>
 
-         
         </div>
 
         <div className="hero-image slide-right">
           <img src={logo} alt="JBN Cakes logo" />
-           <div className="hero-actions">
+           {/* <div className="hero-actions">
   
-</div>
+</div> */}
 
 
         </div>
-        <div className="hero-actions">
+        {/* <div className="hero-actions">
   <a
     href="https://www.instagram.com/jbnca_kes/"
     target="_blank"
@@ -36,7 +33,7 @@ function Home() {
   >
     Contact on Instagram
   </a>
-</div>
+</div> */}
       </section>
 
       {/* FEATURES */}

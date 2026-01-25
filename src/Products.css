@@ -128,7 +128,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
-
+   .products {
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #fff, #faf7f5);
+}
   .cake-card img {
     height: 100px;
   }

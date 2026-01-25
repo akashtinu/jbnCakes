@@ -36,7 +36,7 @@ function Products() {
   ];
 
   const brownies = [
-    { name: "Brownie", price: "₹600", image: img1, tag: "Bestseller" },
+    { name: "Brownie", price: "₹600", image: img1},
     { name: "Nuts Brownie", price: "₹700", image: img2 },
     { name: "Triple Chocolate Brownie", price: "₹700", image: img3 },
   ];
@@ -81,10 +81,10 @@ function Products() {
 
   return (
     <section className="products">
-      <h2 className="section-title" id="cake">Cakes</h2>
+      <h2 className="section-title" id="cakes"  style={{color:" rgba(199, 48, 118, 0.95)"}}>Cakes</h2>
       <div className="cake-grid">{cakes.map(renderCard)}</div>
 
-      <h2 className="section-title" id="brownie">Brownies</h2>
+      <h2 className="section-title" id="brownies"  style={{color:" rgba(199, 48, 118, 0.95)"}}>Brownies</h2>
       <div className="cake-grid">{brownies.map(renderCard)}</div>
 
       {activeImage && (

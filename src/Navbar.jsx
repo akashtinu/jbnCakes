@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -7,55 +7,45 @@ import "./Navbar.css";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      {/* NAVBAR */}
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top pink-navbar">
+      <nav className={`navbar navbar-expand-lg fixed-top pink-navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="container">
 
-          {/* Logo */}
           <a className="navbar-brand" href="#">
             <img src={logo} alt="JBN Cakes" className="navbar-logo" />
           </a>
 
-          {/* Toggle */}
           <button
             className="navbar-toggler"
             onClick={() => setOpen(!open)}
-            aria-label="Toggle navigation"
           >
             <FontAwesomeIcon icon={open ? faXmark : faBars} />
           </button>
 
-          {/* Menu */}
-          <div className={`collapse navbar-collapse ${open ? "show" : ""}`}>
+          <div className={`navbar-collapse ${open ? "open" : ""}`}>
             <ul className="navbar-nav ms-auto text-center">
-
-              <li className="nav-item">
-                <a href="#home" className="nav-link" onClick={() => setOpen(false)}>
-                  Home
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a href="#cake" className="nav-link" onClick={() => setOpen(false)}>
-                  Cakes
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a href="#brownie" className="nav-link" onClick={() => setOpen(false)}>
-                  brownies
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a href="#about" className="nav-link" onClick={() => setOpen(false)}>
-                  About
-                </a>
-              </li>
-
+              {["Home", "Cakes", "Brownies", "About"].map((item) => (
+                <li className="nav-item" key={item}>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className="nav-link"
+                    onClick={() => setOpen(false)}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -63,24 +53,17 @@ function Navbar() {
       </nav>
 
       {/* Floating Instagram */}
-     
-
       <a
         href="https://www.instagram.com/jbnca_kes/"
         target="_blank"
         rel="noopener noreferrer"
         className="floating-instagram"
       >
-        <FontAwesomeIcon
-          icon={faInstagram}
-          bounce
-          className="floating-instagram-icon"
-        />
+        {/* <FontAwesomeIcon icon={faInstagram}   className="floating-instagram-icon " /> */}
+        <FontAwesomeIcon icon={faInstagram} bounce className="floating-instagram-icon" />
       </a>
     </>
   );
 }
 
 export default Navbar;
-
-
